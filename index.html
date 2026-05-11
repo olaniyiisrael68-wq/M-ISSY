@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M-ISSY | Your No.1 Tech Store — Quality Guaranteed</title>
+  <meta name="description" content="Shop the best tech products in Nigeria at M-ISSY. Laptops, Phones, TVs, Accessories, and more. Quality guaranteed with direct WhatsApp ordering.">
+  <meta name="keywords" content="M-ISSY, Tech Store, Nigeria, Buy Phones, Laptops, TVs, Headphones, Apple, Samsung, Tecno, Oraimo">
+  <meta name="author" content="M-ISSY Tech Store">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="M-ISSY Tech Store">
+  <meta property="og:description" content="Your No.1 Tech Store — Quality Guaranteed. Order easily via WhatsApp.">
+  <meta property="og:image" content="https://picsum.photos/1200/630">
+  <meta property="og:url" content="https://m-issy.com">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="M-ISSY Tech Store">
+  <meta name="twitter:description" content="Your No.1 Tech Store — Quality Guaranteed.">
+  
+  <link rel="canonical" href="https://m-issy.com/">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "M-ISSY Tech Store",
+    "url": "https://m-issy.com",
+    "logo": "https://picsum.photos/200/200",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+234-805-115-2098",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+
+  <!-- Google AdSense Placeholder -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader"><div class="spinner"></div></div>
+
+  <!-- Marquee -->
+  <div class="marquee-container">
+    <div class="marquee-text">
+      🔥 Free delivery on orders above ₦50,000 | 💬 WhatsApp us now: 0805 115 2098 | 📱 New arrivals weekly: Samsung, Apple, LG, Oraimo & more!
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">M-ISSY<span>.</span></a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-icons">
+        <form class="search-form" action="shop.html" method="GET">
+          <input type="text" name="q" placeholder="Search tech..." required>
+          <button type="submit">🔍</button>
+        </form>
+        
+        <div class="cart-icon-wrapper" title="View Cart">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          <span class="cart-badge">0</span>
+        </div>
+        
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Sidebar Overlay -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items-container">
+      <!-- Items via JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal:</span>
+        <span id="cart-total-amount">₦0</span>
+      </div>
+      <button class="btn pulse-anim" style="width: 100%;" onclick="checkoutViaWhatsApp()">Checkout via WhatsApp</button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="hero-content">
+        <h1>Your No.1 Tech Store</h1>
+        <p>Quality Guaranteed on Smartphones, Laptops, TVs, Audio & Accessories.</p>
+        <a href="shop.html" class="btn btn-accent pulse-anim">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- AdSense Slot (Below Hero) -->
+    <div class="ad-container">
+      <p>Advertisement</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Featured Categories -->
+    <section class="categories container fade-in">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="categories-grid">
+        <a href="shop.html?cat=Phones" class="category-card">
+          <div class="category-icon">📱</div>
+          <h3>Phones</h3>
+        </a>
+        <a href="shop.html?cat=Laptops" class="category-card">
+          <div class="category-icon">💻</div>
+          <h3>Laptops</h3>
+        </a>
+        <a href="shop.html?cat=TVs" class="category-card">
+          <div class="category-icon">📺</div>
+          <h3>TVs</h3>
+        </a>
+        <a href="shop.html?cat=Headphones" class="category-card">
+          <div class="category-icon">🎧</div>
+          <h3>Audio</h3>
+        </a>
+        <a href="shop.html?cat=Smartwatches" class="category-card">
+          <div class="category-icon">⌚</div>
+          <h3>Accessories</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- Brands Carousel -->
+    <section class="brands fade-in">
+      <div class="container overflow-hidden" style="overflow: hidden;">
+        <div class="brand-track">
+          <!-- Duplicated for seamless scrolling -->
+          <div class="brand-item">SAMSUNG</div>
+          <div class="brand-item">APPLE</div>
+          <div class="brand-item">TECNO</div>
+          <div class="brand-item">INFINIX</div>
+          <div class="brand-item">LG</div>
+          <div class="brand-item">HISENSE</div>
+          <div class="brand-item">SONY</div>
+          <div class="brand-item">ORAIMO</div>
+          <div class="brand-item">HP</div>
+          <div class="brand-item">JBL</div>
+          <div class="brand-item">SAMSUNG</div>
+          <div class="brand-item">APPLE</div>
+          <div class="brand-item">TECNO</div>
+          <div class="brand-item">INFINIX</div>
+          <div class="brand-item">LG</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid" id="featured-products-container">
+          <!-- Products will be loaded via JS -->
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="shop.html" class="btn btn-outline">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense Slot (Between Sections) -->
+    <div class="ad-container fade-in">
+      <p>Advertisement</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="testimonials fade-in" style="background: var(--bg-light);">
+      <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testi-grid">
+          <div class="testi-card">
+            <p class="testi-text">"Got my Samsung S24 Ultra from M-ISSY. The delivery was fast and the customer service on WhatsApp was excellent!"</p>
+            <p class="testi-author">- Kunle A.</p>
+          </div>
+          <div class="testi-card">
+            <p class="testi-text">"I ordered an HP Envy laptop for my design work. Came perfectly sealed and original. Highly recommended."</p>
+            <p class="testi-author">- Chioma N.</p>
+          </div>
+          <div class="testi-card">
+            <p class="testi-text">"The Hisense TV I bought is working flawlessly. Very responsive seller and transparent pricing."</p>
+            <p class="testi-author">- Ibrahim M.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter fade-in">
+      <div class="container">
+        <h2>Stay Updated with New Arrivals</h2>
+        <p>Subscribe to our newsletter and never miss a gadget drop.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348051152098?text=Hello%20M-ISSY,%20I%20want%20to%20place%20an%20order" target="_blank" class="floating-wa" title="Chat on WhatsApp">💬</a>
+  
+  <div class="back-to-top" id="backToTop">↑</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>M-ISSY.</h3>
+          <p>Your No.1 Tech Store — Quality Guaranteed.</p>
+          <p>We provide the best tech products directly to you via seamless WhatsApp ordering.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Tech Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li>WhatsApp 1: <a href="https://wa.me/2348051152098">0805 115 2098</a></li>
+            <li>WhatsApp 2: <a href="https://wa.me/2349162377691">0916 237 7691</a></li>
+          </ul>
+          <div class="social-links">
+            <a href="#">FB</a>
+            <a href="#">IG</a>
+            <a href="#">TW</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> M-ISSY Tech Store. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

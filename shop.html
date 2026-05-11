@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | M-ISSY Tech Store</title>
+  <meta name="description" content="Browse our full catalog of Tech Products. Filter by category, brand, and price to find exactly what you need.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Shop | M-ISSY Tech Store">
+  <link rel="canonical" href="https://m-issy.com/shop.html">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "url": "https://m-issy.com/shop.html",
+    "numberOfItems": 30
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">M-ISSY<span>.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <form class="search-form" action="shop.html" method="GET" id="nav-search-form">
+          <input type="text" name="q" placeholder="Search tech..." id="nav-search-input">
+          <button type="submit">🔍</button>
+        </form>
+        <div class="cart-icon-wrapper" title="View Cart">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          <span class="cart-badge">0</span>
+        </div>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h2>Your Cart</h2><button class="close-cart">&times;</button></div>
+    <div class="cart-items" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal:</span><span id="cart-total-amount">₦0</span></div>
+      <button class="btn" style="width: 100%;" onclick="checkoutViaWhatsApp()">Checkout via WhatsApp</button>
+    </div>
+  </aside>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>All Products</h1>
+      <p>Browse our extensive collection of tech gadgets.</p>
+    </div>
+  </div>
+
+  <main class="page-content bg-light">
+    <div class="container shop-layout">
+      <!-- Sidebar Filters -->
+      <aside class="shop-sidebar fade-in">
+        <div class="filter-group">
+          <h4>Category</h4>
+          <ul class="filter-list" id="filter-categories">
+            <li><input type="checkbox" value="Phones" id="cat-phones"> <label for="cat-phones">Phones</label></li>
+            <li><input type="checkbox" value="Laptops" id="cat-laptops"> <label for="cat-laptops">Laptops</label></li>
+            <li><input type="checkbox" value="TVs" id="cat-tvs"> <label for="cat-tvs">TVs</label></li>
+            <li><input type="checkbox" value="Fridges" id="cat-fridges"> <label for="cat-fridges">Fridges</label></li>
+            <li><input type="checkbox" value="Freezers" id="cat-freezers"> <label for="cat-freezers">Freezers</label></li>
+            <li><input type="checkbox" value="Headphones" id="cat-headphones"> <label for="cat-headphones">Headphones</label></li>
+            <li><input type="checkbox" value="Earbuds" id="cat-earbuds"> <label for="cat-earbuds">Earbuds & Earphones</label></li>
+            <li><input type="checkbox" value="Smartwatches" id="cat-smartwatches"> <label for="cat-smartwatches">Smartwatches</label></li>
+            <li><input type="checkbox" value="Tablets" id="cat-tablets"> <label for="cat-tablets">Tablets</label></li>
+            <li><input type="checkbox" value="Accessories" id="cat-accessories"> <label for="cat-accessories">Accessories</label></li>
+          </ul>
+        </div>
+        <div class="filter-group">
+          <h4>Brand</h4>
+          <ul class="filter-list" id="filter-brands">
+             <!-- To be populated via JS -->
+          </ul>
+        </div>
+        <div class="filter-group">
+          <h4>Maximum Price (₦)</h4>
+          <input type="range" id="price-slider" min="10000" max="5000000" step="10000" style="width: 100%;">
+          <div style="display:flex; justify-content:space-between; margin-top:5px; font-size:0.9rem;">
+            <span>₦10K</span><span id="price-display">₦5M</span>
+          </div>
+        </div>
+        <!-- AdSense Sidebar -->
+        <div class="ad-container" style="margin-top:20px; padding:10px;">
+           <p style="font-size:10px;">Advertisement</p>
+           <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="vertical" data-full-width-responsive="true"></ins>
+           <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </aside>
+
+      <!-- Main Shop Area -->
+      <section class="shop-main">
+        <div class="shop-topbar fade-in">
+          <p id="result-count">Showing 0 products</p>
+          <select id="sort-select" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+            <option value="default">Default Sorting</option>
+            <option value="newest">Newest First</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
+        </div>
+        
+        <div class="product-grid" id="shop-products-container">
+          <!-- Products will be injected here -->
+        </div>
+
+        <div id="no-results-msg" style="display: none; padding: 40px; text-align: center;">
+          <h3>No products match your criteria.</h3>
+          <button class="btn" style="margin-top: 20px;" id="clear-filters-btn">Clear Filters</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <a href="https://wa.me/2348051152098?text=Hello%20M-ISSY,%20I%20want%20to%20place%20an%20order" target="_blank" class="floating-wa" title="Chat on WhatsApp">💬</a>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> M-ISSY Tech Store. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Setup dynamic brand filters based on data
+      const brandsSet = new Set(window.productsData.map(p => p.brand));
+      const brandsContainer = document.getElementById('filter-brands');
+      brandsSet.forEach(brand => {
+        brandsContainer.innerHTML += `<li><input type="checkbox" value="${brand}" id="brand-${brand}"> <label for="brand-${brand}">${brand}</label></li>`;
+      });
+
+      // Filtering logic
+      const container = document.getElementById('shop-products-container');
+      const countEl = document.getElementById('result-count');
+      const noResults = document.getElementById('no-results-msg');
+      const sortSelect = document.getElementById('sort-select');
+      const priceSlider = document.getElementById('price-slider');
+      const priceDisplay = document.getElementById('price-display');
+
+      let currentProducts = [...window.productsData];
+
+      // Parse query params for search or category links from homepage
+      const urlParams = new URLSearchParams(window.location.search);
+      const querySearch = urlParams.get('q');
+      const queryCat = urlParams.get('cat');
+
+      if(querySearch) {
+        document.getElementById('nav-search-input').value = querySearch;
+      }
+      if(queryCat) {
+        const check = document.querySelector(`input[value="${queryCat}"]`);
+        if(check) check.checked = true;
+      }
+      
+      // Setup event listeners for filters
+      const filterInputs = document.querySelectorAll('.shop-sidebar input[type="checkbox"]');
+      filterInputs.forEach(input => input.addEventListener('change', updateFilters));
+      
+      sortSelect.addEventListener('change', updateFilters);
+      
+      priceSlider.addEventListener('input', (e) => {
+        priceDisplay.textContent = window.formatPrice(e.target.value);
+      });
+      priceSlider.addEventListener('change', updateFilters);
+      
+      document.getElementById('clear-filters-btn').addEventListener('click', () => {
+        filterInputs.forEach(i => i.checked = false);
+        priceSlider.value = priceSlider.max;
+        priceDisplay.textContent = '₦5M';
+        document.getElementById('nav-search-input').value = '';
+        window.history.replaceState({}, '', 'shop.html');
+        updateFilters();
+      });
+
+      // Filter execution
+      function updateFilters() {
+        // Collect active categories
+        const activeCats = Array.from(document.querySelectorAll('#filter-categories input:checked')).map(cb => cb.value);
+        // Collect active brands
+        const activeBrands = Array.from(document.querySelectorAll('#filter-brands input:checked')).map(cb => cb.value);
+        // Max price
+        const maxPrice = parseInt(priceSlider.value);
+        // Search term
+        const searchTerm = document.getElementById('nav-search-input').value.toLowerCase();
+        
+        let filtered = window.productsData.filter(p => {
+          const matchCat = activeCats.length === 0 || activeCats.includes(p.category);
+          const matchBrand = activeBrands.length === 0 || activeBrands.includes(p.brand);
+          const matchPrice = p.price <= maxPrice;
+          const matchSearch = !searchTerm || p.name.toLowerCase().includes(searchTerm) || p.brand.toLowerCase().includes(searchTerm) || p.category.toLowerCase().includes(searchTerm);
+          return matchCat && matchBrand && matchPrice && matchSearch;
+        });
+
+        // Sorting
+        const sortVal = sortSelect.value;
+        if(sortVal === 'price-low') {
+          filtered.sort((a,b) => a.price - b.price);
+        } else if (sortVal === 'price-high') {
+          filtered.sort((a,b) => b.price - a.price);
+        } else if (sortVal === 'newest') {
+          filtered = filtered.filter(p=>p.isNew).concat(filtered.filter(p=>!p.isNew));
+        }
+
+        currentProducts = filtered;
+        render();
+      }
+
+      function render() {
+        countEl.textContent = `Showing ${currentProducts.length} product${currentProducts.length !== 1 ? 's' : ''}`;
+        
+        if (currentProducts.length === 0) {
+          container.innerHTML = '';
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+          
+          // Inject ads after every 8 products
+          let html = '';
+          currentProducts.forEach((p, index) => {
+             html += window.generateProductCardHTML(p);
+             if((index + 1) % 8 === 0 && index !== currentProducts.length - 1) {
+               html += `
+                <div class="ad-container" style="grid-column: 1 / -1; margin: 20px 0;">
+                  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>
+                </div>
+               `;
+             }
+          });
+          container.innerHTML = html;
+        }
+      }
+
+      // Initial Call
+      updateFilters();
+    });
+  </script>
+</body>
+</html>

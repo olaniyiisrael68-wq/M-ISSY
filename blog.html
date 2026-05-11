@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog | M-ISSY Tech Store</title>
+  <meta name="description" content="Read the latest tech news, product comparisons, and buying guides from M-ISSY.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m-issy.com/blog.html">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">M-ISSY<span>.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <form class="search-form" action="shop.html" method="GET">
+          <input type="text" name="q" placeholder="Search tech..." required>
+          <button type="submit">🔍</button>
+        </form>
+        <div class="cart-icon-wrapper" title="View Cart">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          <span class="cart-badge">0</span>
+        </div>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h2>Your Cart</h2><button class="close-cart">&times;</button></div>
+    <div class="cart-items" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal:</span><span id="cart-total-amount">₦0</span></div>
+      <button class="btn" style="width: 100%;" onclick="checkoutViaWhatsApp()">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="page-header fade-in">
+    <div class="container">
+      <h1>Tech Blog</h1>
+      <p>Guides, comparisons, and news to keep you updated.</p>
+    </div>
+  </div>
+
+  <main class="page-content bg-light">
+    <div class="container">
+      
+      <div class="blog-grid fade-in">
+        
+        <!-- Blog Card 1 -->
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://picsum.photos/seed/blog1/400/250" alt="Budget Smartphones">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 Oct 15, 2025</span>
+              <span>🏷️ Buying Guide</span>
+            </div>
+            <h3 class="blog-title">Top 5 Budget Smartphones in Nigeria 2025</h3>
+            <p style="color:var(--text-light); margin-bottom:20px;">Looking for a great phone without breaking the bank? Check out our list of the best budget smartphones that offer amazing value for money.</p>
+            <a href="blog-post.html?id=1" class="btn btn-outline" style="width:100%;">Read More</a>
+          </div>
+        </article>
+
+        <!-- Blog Card 2 -->
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://picsum.photos/seed/blog2/400/250" alt="Samsung vs Tecno">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 Oct 10, 2025</span>
+              <span>🏷️ Comparison</span>
+            </div>
+            <h3 class="blog-title">Samsung vs Tecno: Which Should You Buy?</h3>
+            <p style="color:var(--text-light); margin-bottom:20px;">A detailed breakdown of the camera, battery life, and overall performance between Samsung's A-series and Tecno's Camon series.</p>
+            <a href="blog-post.html?id=2" class="btn btn-outline" style="width:100%;">Read More</a>
+          </div>
+        </article>
+
+        <!-- Blog Card 3 -->
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://picsum.photos/seed/blog3/400/250" alt="Choosing a TV">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 Sep 28, 2025</span>
+              <span>🏷️ Home Appliances</span>
+            </div>
+            <h3 class="blog-title">How to Choose the Right TV for Your Home</h3>
+            <p style="color:var(--text-light); margin-bottom:20px;">OLED, QLED, UHD... what does it all mean? Learn how to pick the perfect television size and panel type for your living space.</p>
+            <a href="blog-post.html?id=3" class="btn btn-outline" style="width:100%;">Read More</a>
+          </div>
+        </article>
+
+        <!-- Blog Card 4 -->
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://picsum.photos/seed/blog4/400/250" alt="Oraimo vs JBL">
+          </div>
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span>📅 Sep 15, 2025</span>
+              <span>🏷️ Audio</span>
+            </div>
+            <h3 class="blog-title">Oraimo vs JBL Earbuds: Full Comparison</h3>
+            <p style="color:var(--text-light); margin-bottom:20px;">We tested the bass, battery, and comfort of the latest Oraimo FreePods and JBL Tune series. Here is our honest verdict.</p>
+            <a href="blog-post.html?id=4" class="btn btn-outline" style="width:100%;">Read More</a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- AdSense Slot -->
+  <div class="ad-container fade-in">
+    <p>Advertisement</p>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <a href="https://wa.me/2348051152098" target="_blank" class="floating-wa">💬</a>
+
+  <footer>
+    <div class="container footer-bottom">
+      <p>&copy; M-ISSY Tech Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

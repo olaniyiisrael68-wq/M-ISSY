@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | M-ISSY Tech Store</title>
+  <meta name="description" content="Contact M-ISSY Tech Store. Order via WhatsApp, see our store hours, or read our Frequently Asked Questions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m-issy.com/contact.html">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    .faq-item { border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+    .faq-q { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q::after { content: '+'; font-size: 1.5rem; transition: transform 0.3s; }
+    .faq-item.active .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-top: 10px; color: var(--text-light); }
+    .faq-item.active .faq-a { max-height: 500px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">M-ISSY<span>.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <form class="search-form" action="shop.html" method="GET">
+          <input type="text" name="q" placeholder="Search tech..." required>
+          <button type="submit">🔍</button>
+        </form>
+        <div class="cart-icon-wrapper" title="View Cart">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          <span class="cart-badge">0</span>
+        </div>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h2>Your Cart</h2><button class="close-cart">&times;</button></div>
+    <div class="cart-items" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal:</span><span id="cart-total-amount">₦0</span></div>
+      <button class="btn" style="width: 100%;" onclick="checkoutViaWhatsApp()">Checkout via WhatsApp</button>
+    </div>
+  </aside>
+
+  <div class="page-header fade-in">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We're here to help. Get in touch with us today.</p>
+    </div>
+  </div>
+
+  <main class="page-content">
+    <div class="container">
+      
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px; margin-bottom:60px;">
+        <!-- Left: WhatsApp & Hours -->
+        <div class="fade-in">
+          <h2 style="margin-bottom: 20px;">Ready to Order?</h2>
+          <p style="margin-bottom: 30px; font-size:1.1rem; color:var(--text-light);">The fastest way to reach us or place an order is via WhatsApp. Click any of the numbers below to chat with a representative instantly.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:40px;">
+            <a href="https://wa.me/2348051152098?text=Hello%20M-ISSY" target="_blank" class="btn btn-whatsapp" style="display:flex; align-items:center; justify-content:center; gap:10px; font-size:1.2rem; padding:20px;">
+              <span style="font-size:1.5rem;">📱</span> Chat on WhatsApp: 0805 115 2098
+            </a>
+            <a href="https://wa.me/2349162377691?text=Hello%20M-ISSY" target="_blank" class="btn btn-whatsapp" style="display:flex; align-items:center; justify-content:center; gap:10px; font-size:1.2rem; padding:20px; background:#128C7E;">
+              <span style="font-size:1.5rem;">📱</span> Chat on WhatsApp: 0916 237 7691
+            </a>
+          </div>
+
+          <div style="background:var(--bg-light); padding:30px; border-radius:12px;">
+            <h3 style="margin-bottom:20px;">Store Hours</h3>
+            <ul style="color:var(--text-light); line-height:2;">
+              <li><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</li>
+              <li><strong>Saturday:</strong> 9:00 AM - 4:00 PM</li>
+              <li><strong>Sunday:</strong> 10:00 AM - 2:00 PM (Online orders only)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: Maps Placeholder & Info -->
+        <div class="fade-in">
+          <h2 style="margin-bottom: 20px;">Our Location</h2>
+          <div style="width:100%; height:300px; background:#e2e8f0; border-radius:12px; display:flex; justify-content:center; align-items:center; margin-bottom:20px;">
+            <span style="color:var(--text-light);">[ Google Maps Embed Placeholder ]</span>
+          </div>
+          <h3 style="margin-bottom:10px;">M-ISSY Tech Store</h3>
+          <p style="color:var(--text-light); margin-bottom:10px;">Lagos, Nigeria</p>
+          <p style="color:var(--text-light);">Email: support@m-issy.com <br>(Please note we respond faster via WhatsApp)</p>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="fade-in" style="max-width:800px; margin:0 auto 60px;">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div style="background:var(--white); border-radius:12px; box-shadow:var(--shadow-sm); padding:20px;">
+          
+          <div class="faq-item">
+            <div class="faq-q">How do I place an order?</div>
+            <div class="faq-q-inner faq-a">
+              <p>Ordering is simple! Browse our shop, add items to your cart, and click "Checkout via WhatsApp". Alternatively, you can click "Order on WhatsApp" directly from any product page. This will open a chat with us where we finalize your payment and delivery details.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">What payment methods do you accept?</div>
+            <div class="faq-q-inner faq-a">
+              <p>We process all payments via direct bank transfer or authorized payment links sent to you securely via our official WhatsApp lines.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">How long does delivery take?</div>
+            <div class="faq-q-inner faq-a">
+              <p>Deliveries within Lagos typically take 24-48 hours. Outside Lagos, delivery takes 3-5 business days depending on your location. We provide tracking information via WhatsApp once dispatched.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Are your products authentic?</div>
+            <div class="faq-q-inner faq-a">
+              <p>Absolutely. We guarantee that all our products are 100% authentic, brand-new, and sourced directly from verified manufacturers or their authorized distributors. They come with standard manufacturer warranties.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-bottom:none;">
+            <div class="faq-q">What is your return policy?</div>
+            <div class="faq-q-inner faq-a">
+              <p>We accept returns within 7 days of delivery for factory defective items. The item must be in its original packaging with all accessories. Please contact our WhatsApp support to initiate a return.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- AdSense Slot -->
+  <div class="ad-container fade-in">
+    <p>Advertisement</p>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <footer>
+    <div class="container footer-bottom">
+      <p>&copy; M-ISSY Tech Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqs = document.querySelectorAll('.faq-item');
+      faqs.forEach(faq => {
+        faq.querySelector('.faq-q').addEventListener('click', () => {
+          faq.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

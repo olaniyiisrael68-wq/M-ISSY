@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | M-ISSY Tech Store</title>
+  <meta name="description" content="Product details page for M-ISSY">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">M-ISSY<span>.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <div class="cart-icon-wrapper" title="View Cart">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          <span class="cart-badge">0</span>
+        </div>
+        <div class="hamburger">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header"><h2>Your Cart</h2><button class="close-cart">&times;</button></div>
+    <div class="cart-items" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Subtotal:</span><span id="cart-total-amount">₦0</span></div>
+      <button class="btn" style="width: 100%;" onclick="checkoutViaWhatsApp()">Checkout</button>
+    </div>
+  </aside>
+
+  <main class="page-content" id="single-product-main" style="min-height: 60vh;">
+    <div class="container" id="product-container">
+      <!-- Product Details Rendered via JS -->
+      <h3 style="text-align:center; padding:50px;">Loading Product...</h3>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-bottom">
+      <p>&copy; M-ISSY Tech Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = parseInt(urlParams.get('id'));
+      const container = document.getElementById('product-container');
+      
+      const product = window.productsData.find(p => p.id === productId);
+      
+      if(!product) {
+        container.innerHTML = `<h3 style="text-align:center; padding:50px;">Product Not Found. <a href="shop.html">Return to Shop</a></h3>`;
+        return;
+      }
+      
+      // Update meta title dynamically
+      document.title = `${product.name} | M-ISSY Tech Store`;
+      
+      const badgeClass = window.getBadgeClass(product.brand);
+      const waText = encodeURIComponent(`Hello M-ISSY, I want to order ${product.name} for ${window.formatPrice(product.price)}`);
+
+      container.innerHTML = `
+        <div class="sp-layout fade-in">
+          <div class="sp-img-wrap">
+            <span class="product-badge ${badgeClass}" style="position:absolute; margin:10px;">${product.brand}</span>
+            <img src="${product.image}" alt="${product.name}">
+          </div>
+          <div class="sp-details">
+            <div class="sp-brand">${product.category} > ${product.brand}</div>
+            <h1 class="sp-title">${product.name}</h1>
+            <div class="product-rating" style="margin-bottom:20px;">★★★★★ (${product.rating})</div>
+            
+            <div class="sp-price-wrap">
+              <div class="sp-price">${window.formatPrice(product.price)}</div>
+              ${product.oldPrice ? `<div class="old-price" style="font-size:1.2rem;">${window.formatPrice(product.oldPrice)}</div>` : ''}
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+              <span style="background:var(--bg-light); padding:5px 10px; border-radius:4px; font-weight:600; font-size:0.9rem;">
+                ${product.inStock ? '🟢 In Stock' : '🔴 Out of Stock'}
+              </span>
+              ${product.isNew ? '<span style="background:var(--accent-color); padding:5px 10px; border-radius:4px; font-weight:600; font-size:0.9rem; margin-left:10px;">New Arrival</span>' : ''}
+            </div>
+
+            <p class="sp-desc">${product.description}</p>
+            
+            <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:40px;">
+              <button class="btn" onclick="addToCart(${product.id})" style="flex:1" ${!product.inStock ? 'disabled' : ''}>Add to Cart</button>
+              <a href="https://wa.me/2348051152098?text=${waText}" target="_blank" class="btn btn-whatsapp" style="flex:1; text-align:center;">Order on WhatsApp</a>
+            </div>
+            
+            <div style="margin-top:40px; padding-top:20px; border-top:1px solid #eee;">
+              <p><strong>Delivery:</strong> Free nationwide delivery on orders over ₦50,000</p>
+              <p><strong>Support:</strong> 24/7 WhatsApp assistance available.</p>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
